@@ -8,7 +8,7 @@ class Node {
     }
 }
 
-public class Nthfromlast {
+public class LinkedLists {
     public static void main(String[] args) {
         Node head = ib(null, 1); // inserting at begining
         ie(head, 2); // inserting at end
@@ -42,7 +42,12 @@ public class Nthfromlast {
         System.out.println("Removing nth node from end");
         display(head);
         System.out.println();
+        head = rev(head);
+        System.out.println("reverse of linked list");
+        display(head);
+        System.out.println();
         System.out.println("No of nodes present-:" + countNodes(head)); // printing number of nodes
+
     }
 
     // method to insert from begining
@@ -155,5 +160,20 @@ public class Nthfromlast {
         } else {
             curr.next = null; // Update the reference for the last node
         }
+    }
+
+    // reverse linked list
+    public static Node rev(Node head) {
+        Node prev = null;
+        Node next = null;
+        Node cur = head;
+
+        while (cur != null) {
+            next = cur.next; // cloning second node
+            cur.next = prev; // breaking the chain and joining to prev
+            prev = cur;
+            cur = next;
+        }
+        return prev;
     }
 }
