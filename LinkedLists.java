@@ -36,7 +36,6 @@ public class LinkedLists {
         System.out.println("Removing element after 3rd node");
         ran(head, 3);
         display(head);
-
         rane(head, 7);
         System.out.println();
         System.out.println("Removing nth node from end");
