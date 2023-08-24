@@ -19,6 +19,7 @@ public class MaxTwinSum {
         int d = maxTwinSum(head);
         System.out.println();
         System.out.println(d);
+
     }
 
     // user input linked list
