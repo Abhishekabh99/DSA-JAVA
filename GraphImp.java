@@ -8,13 +8,13 @@
 
 import java.util.*;
 
-class Graph {
+class GraphClass {
 
     HashMap<Integer, List<Integer>> hashmap = new HashMap<>();
 
     // we should not generate constructor we should manually make it where no
     // parameter required
-    Graph() {
+    GraphClass() {
         hashmap = new HashMap<>();
     }
 
@@ -35,7 +35,7 @@ class Graph {
 
 class GraphImp {
     public static void main(String[] args) {
-        Graph graph = new Graph();
+        GraphClass graph = new GraphClass();
         graph.addVertex(1);
         graph.addVertex(2);
         graph.addVertex(3);
