@@ -10,7 +10,7 @@ import java.util.*;
 
 class GraphClass {
 
-    HashMap<Integer, List<Integer>> hashmap = new HashMap<>();
+    private HashMap<Integer, List<Integer>> hashmap = new HashMap<>();
 
     // we should not generate constructor we should manually make it where no
     // parameter required
