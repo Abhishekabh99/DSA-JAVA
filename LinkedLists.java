@@ -45,6 +45,10 @@ public class LinkedLists {
         System.out.println("reverse of linked list");
         display(head);
         System.out.println();
+        sw(head, 2);
+        System.out.println("Below is list after nodes swapped");
+        display(head);
+        System.out.println();
         System.out.println("No of nodes present-:" + countNodes(head)); // printing number of nodes
 
     }
@@ -174,5 +178,39 @@ public class LinkedLists {
             cur = next;
         }
         return prev;
+    }
+
+    // swapping nodes
+    public static Node sw(Node head, int k) {
+        Node temp = head;
+        // k is for index
+        int i = 1;
+        while (i < k) {
+            temp = temp.next;
+            i++;
+        }
+        Node beg = temp;
+        temp = head;
+        int size = 1;
+        while (temp.next != null) {
+            temp = temp.next;
+            size++;
+        }
+        temp = head;
+        i = 0;
+        int k2 = size - k;
+        while (i < k2) {
+            temp = temp.next;
+            i++;
+        }
+        Node end = temp;
+        temp = head;
+        // swapping
+        int temd = end.data;
+        ;
+        end.data = beg.data;
+        beg.data = temd;
+
+        return head;
     }
 }
