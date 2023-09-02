@@ -4,6 +4,9 @@ public class Pattern {
         square();
         System.out.println("right angle traingle below :");
         rat();
+        System.out.println("doing ac code :");
+        int c = ac(5);
+        System.out.println(c);
     }
 
     // square pattern
@@ -34,5 +37,25 @@ public class Pattern {
             i++;
         }
     }
-    //
+
+    // arranging coins
+    public static int ac(int n) {
+        int i = 0;
+        int count = (n * (n + 1)) / 2;
+        while (i < count) {
+            int j = 0;
+            while (j <= i) {
+                System.out.print("*");
+                j++;
+            }
+            System.out.println();
+            count++;
+        }
+        return count;
+    }
+
+    // find
+    // public static int find(int count) {
+
+    // }
 }
