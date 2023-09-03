@@ -34,7 +34,7 @@ public class Permutations {
     // permutations
     public static void permute(int[] arr) {
         List<List<Integer>> permuts = new ArrayList<>();
-        helper(arr, 0, new ArrayList<>(), permuts);
+        helper(arr, new ArrayList<>(), permuts);
         // printing permutations
         System.out.println("All possible permutations below :");
         for (List<Integer> list : permuts) {
@@ -42,7 +42,7 @@ public class Permutations {
         }
     }
 
-    public static void helper(int[] arr, int index, List<Integer> curr, List<List<Integer>> permutes) {
+    public static void helper(int[] arr, List<Integer> curr, List<List<Integer>> permutes) {
         // basecase
         if (curr.size() == arr.length) {
             permutes.add(new ArrayList<>(curr));
@@ -53,7 +53,7 @@ public class Permutations {
                 // including element
                 curr.add(i);
                 // backtracking
-                helper(arr, index, curr, permutes);
+                helper(arr, curr, permutes);
                 // excluding element
                 curr.remove(curr.size() - 1);
             }
