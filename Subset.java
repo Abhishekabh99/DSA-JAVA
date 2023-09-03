@@ -39,8 +39,10 @@ public class Subset {
     public static void generateSubsets(int[] arr) {
         List<List<Integer>> subsets = new ArrayList<>();
         helper(arr, 0, new ArrayList<>(), subsets);
+        System.out.print("subsets :");
         for (List<Integer> subset : subsets) {
-            System.out.println(subset);
+            System.out.print(subset + ",");
+
         }
 
     }
