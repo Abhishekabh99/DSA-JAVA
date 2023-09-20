@@ -8,6 +8,7 @@ class MinDif {
         System.out.println("Highest number is : " + max);
         int min = lowest(arr);
         System.out.println("Lowest number is " + min);
+
     }
 
     // find highest in array
