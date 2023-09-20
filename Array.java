@@ -2,13 +2,21 @@ import java.util.*;
 
 class MinDif {
     public static void main(String[] args) {
-        int[] arr = inarr();
-        display(arr);
-        int max = highest(arr);
-        System.out.println("Highest number is : " + max);
-        int min = lowest(arr);
-        System.out.println("Lowest number is " + min);
+        // int[] arr = inarr();
+        // display(arr);
+        // int max = highest(arr);
+        // System.out.println("Highest number is : " + max);
+        // int min = lowest(arr);
+        // System.out.println("Lowest number is " + min);
+        // System.out.println("executing next greater element :");
+        int[] sarr = { 4, 1, 2 };
+        int[] marr = { 1, 3, 4, 2 };
+        int[] ngarr = ng(sarr, marr);
+        for (int i : ngarr) {
+            System.out.print(i + " ");
 
+        }
+        System.out.println();
     }
 
     // find highest in array
@@ -55,6 +63,30 @@ class MinDif {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
+    }
+
+    // next greater element
+    public static int[] ng(int[] sarr, int[] marr) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < marr.length; i++) {
+            map.put(marr[i], nge(marr, i));
+        }
+        int[] ans = new int[sarr.length];
+        for (int i = 0; i < sarr.length; i++) {
+            ans[i] = map.get(sarr[i]);
+        }
+        return ans;
+    }
+
+    // next greater element in an array
+    public static int nge(int[] arr, int index) {
+        int c = arr[index];
+        for (int i = index; i < arr.length; i++) {
+            if (arr[i] > c) {
+                return arr[i];
+            }
+        }
+        return -1;
     }
 
 }
