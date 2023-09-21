@@ -1,43 +1,27 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
 class Example2 {
     public static void main(String[] args) {
-        int[] arr = inarr();
-        display(arr);
-        int ng = nge(arr, 3);
-        System.out.println(ng);
+        int[] arr = { 1, 1 };
+        List<Integer> ans = new ArrayList<>();
+        ans = dn(arr);
+        System.out.println(ans.toString());
     }
 
-    // user input array
-    public static int[] inarr() {
-        System.out.println("Enter Size of array :");
-        Scanner sc = new Scanner(System.in);
-        int s = sc.nextInt();
-        int[] arr = new int[s];
-        for (int i = 0; i < s; i++) {
-            System.out.println("Enter element of array for index :" + i);
-            arr[i] = sc.nextInt();
+    // dn
+    public static List<Integer> dn(int[] arr) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int i : arr) {
+            set.add(i);
         }
-        return arr;
-    }
-
-    // display array
-    public static void display(int[] arr) {
-        System.out.println("Array elements are below :");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-    }
-
-    // next greater element in array
-    public static int nge(int[] arr, int index) {
-        int c = arr[index];
-        for (int i = index; i < arr.length; i++) {
-            if (arr[i] > c) {
-                return arr[i];
+        ArrayList<Integer> al = new ArrayList<>();
+        for (int i = 1; i <= arr.length; i++) {
+            if (!set.contains(i)) {
+                al.add(i);
             }
         }
-        return -1;
+        return al;
     }
 }

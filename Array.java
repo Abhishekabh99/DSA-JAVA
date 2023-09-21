@@ -2,21 +2,21 @@ import java.util.*;
 
 class MinDif {
     public static void main(String[] args) {
-        // int[] arr = inarr();
-        // display(arr);
-        // int max = highest(arr);
-        // System.out.println("Highest number is : " + max);
-        // int min = lowest(arr);
-        // System.out.println("Lowest number is " + min);
-        // System.out.println("executing next greater element :");
-        // int[] sarr = { 4, 1, 2 };
-        // int[] marr = { 1, 3, 4, 2 };
-        // int[] ngarr = ng(sarr, marr);
-        // for (int i : ngarr) {
-        // System.out.print(i + " ");
+        int[] arr = inarr();
+        display(arr);
+        int max = highest(arr);
+        System.out.println("Highest number is : " + max);
+        int min = lowest(arr);
+        System.out.println("Lowest number is " + min);
+        System.out.println("executing next greater element :");
+        int[] sarr = { 4, 1, 2 };
+        int[] marr = { 1, 3, 4, 2 };
+        int[] ngarr = ng(sarr, marr);
+        for (int i : ngarr) {
+            System.out.print(i + " ");
 
-        // }
-        // System.out.println();
+        }
+        System.out.println();
         System.out.println("executing find pivot index :");
         int[] arr1 = { 1, 7, 3, 6, 5, 6 };
         int p = pi(arr1);
@@ -109,6 +109,21 @@ class MinDif {
             }
         }
         return -1;
+    }
+
+    // fucntion to find dissapeared element Leetcode - 724
+    public static List<Integer> dn(int[] arr) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int i : arr) {
+            set.add(i);
+        }
+        ArrayList<Integer> al = new ArrayList<>();
+        for (int i = 1; i <= arr.length; i++) {
+            if (!set.contains(i)) {
+                al.add(i);
+            }
+        }
+        return al;
     }
 
 }
