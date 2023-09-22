@@ -1,27 +1,32 @@
-import java.util.*;
+import java.util.HashMap;
 
-public class Strings {
+class Strings {
 
     public static void main(String[] args) {
-        Strings obj = new Strings(); // created instance of class in main method
-        String s1 = obj.in();
-        String s2 = obj.in();
-        System.out.println("Your meged strings below");
-        System.out.println(obj.merge(s1, s2));
-    
+        String s1 = "loonbalxballpoon";
+        // covert string to character array
+        char[] s1c = s1.toCharArray();
+        // store array elements in hashmap
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (char a : s1c) {
+            if (a == 'b' || a == 'a' || a == 'l' || a == 'o' || a == 'n') {
+                if (map.containsKey(a)) {
+                    map.put(a, map.get(a) + 1);
+                } else {
 
-    // userInputString
-    String in() {
-        System.out.println("Enter your String");
-        Scanner sc = new Scanner(System.in);
-        String s1 = sc.nextLine();
-        return s1;
-    }
+                    map.put(a, 1);
+                }
+            }
+        }
+        int minCount = Integer.MAX_VALUE;
+        minCount = Math.min(minCount, map.getOrDefault('b', 0));
+        minCount = Math.min(minCount, map.getOrDefault('a', 0));
+        minCount = Math.min(minCount, map.getOrDefault('l', 0) / 2);
+        minCount = Math.min(minCount, map.getOrDefault('o', 0) / 2);
+        minCount = Math.min(minCount, map.getOrDefault('n', 0));
 
-    // merge strings
-    String merge(String s1, String s2) {
-        String s3 = s1 + s2;
-        return s3;
+        System.out.println(minCount);
+
     }
 
 }
